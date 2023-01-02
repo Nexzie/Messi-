@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/727e89d0c1.js" crossorigin="anonymous"></script> 
+    <title>SEARCH PAGE</title>
+</head>
+<body>
+  <header class="desktop_header">
+    <nav>
+      <div class="logo__search_container">
+        <figure>
+          <img src="./images/g-logo.png" alt="google logo" />
+        </figure>
+        
+
+        <div class="search-container">
+          <input class="search-input" />
+          <div class="search-icon-container">
+            <div class="search-icon">
+              <svg
+                class="goxjub"
+                height="25"
+                width="25"
+                focusable="false"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+              <path
+              fill="#4285f4"
+              d="m12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z"
+            ></path>
+            <path fill="#34a853" d="m11 18.08h2v3.92h-2z"></path>
+            <path
+              fill="#fbbc05"
+              d="m7.05 16.87c-1.27-1.33-2.05-2.83-2.05-4.87h2c0 1.45 0.56 2.42 1.47 3.38v0.32l-1.15 1.18z"
+            ></path>
+            <path
+              fill="#ea4335"
+              d="m12 16.93a4.97 5.25 0 0 1 -3.54 -1.55l-1.41 1.49c1.26 1.34 3.02 2.13 4.95 2.13 3.87 0 6.99-2.92 6.99-7h-1.99c0 2.92-2.24 4.93-5 4.93z"
+            ></path>
+          </svg>
+        </div>
+
+        <div class="search-icon">
+
+        
+
+          <img
+            src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IlN0YW5kYXJkX3Byb2R1Y3RfaWNvbiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIKCSB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE5MnB4IiBoZWlnaHQ9IjE5MnB4IiB2aWV3Qm94PSIwIDAgMTkyIDE5MiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTkyIDE5MiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxyZWN0IGlkPSJib3VuZGluZ19ib3hfMV8iIGZpbGw9Im5vbmUiIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIi8+CjxnIGlkPSJhcnRfbGF5ZXIiPgoJPGNpcmNsZSBpZD0iRG90IiBmaWxsPSIjNDI4NUY0IiBjeD0iOTYiIGN5PSIxMDQuMTUiIHI9IjI4Ii8+Cgk8cGF0aCBpZD0iUmVkIiBmaWxsPSIjRUE0MzM1IiBkPSJNMTYwLDcydjQwLjE1VjEzNmMwLDEuNjktMC4zNCwzLjI5LTAuODIsNC44MnYwdjBjLTEuNTcsNC45Mi01LjQzLDguNzgtMTAuMzUsMTAuMzVoMHYwCgkJYy0xLjUzLDAuNDktMy4xMywwLjgyLTQuODIsMC44Mkg2NmwxNiwxNmg1MGgxMmM0LjQyLDAsOC42My0wLjksMTIuNDYtMi41MWMzLjgzLTEuNjIsNy4yOC0zLjk2LDEwLjE3LTYuODYKCQljMS40NS0xLjQ1LDIuNzYtMy4wMywzLjkxLTQuNzRjMi4zLTMuNCwzLjk2LTcuMjgsNC44MS0xMS40NGMwLjQzLTIuMDgsMC42NS00LjI0LDAuNjUtNi40NXYtMTJWOTYuMTVWODRsLTYtMTlsLTEwLjgyLDIuMTgKCQlDMTU5LjY2LDY4LjcxLDE2MCw3MC4zMSwxNjAsNzJ6Ii8+Cgk8cGF0aCBpZD0iQmx1ZSIgZmlsbD0iIzQyODVGNCIgZD0iTTMyLDcyYzAtMS42OSwwLjM0LTMuMjksMC44Mi00LjgyYzEuNTctNC45Miw1LjQzLTguNzgsMTAuMzUtMTAuMzVDNDQuNzEsNTYuMzQsNDYuMzEsNTYsNDgsNTYKCQloOTZjMS42OSwwLDMuMjksMC4zNCw0LjgyLDAuODJjMCwwLDAsMCwwLDBMMTQ5LDQ1bC0xNy01bC0xNi0xNmgtMTMuNDRIOTZoLTYuNTZINzZMNjAsNDBINDhjLTE3LjY3LDAtMzIsMTQuMzMtMzIsMzJ2MTJ2MjBsMTYsMTYKCQlWNzJ6Ii8+Cgk8cGF0aCBpZD0iR3JlZW4iIGZpbGw9IiMzNEE4NTMiIGQ9Ik0xNDQsNDBoLTEybDE2LjgzLDE2LjgzYzEuMjMsMC4zOSwyLjM5LDAuOTMsMy40NywxLjU5YzIuMTYsMS4zMiwzLjk3LDMuMTMsNS4yOSw1LjI5CgkJYzAuNjYsMS4wOCwxLjIsMi4yNCwxLjU5LDMuNDd2MEwxNzYsODRWNzJDMTc2LDU0LjMzLDE2MS42Nyw0MCwxNDQsNDB6Ii8+Cgk8cGF0aCBpZD0iWWVsbG93IiBmaWxsPSIjRkJCQzA0IiBkPSJNNDgsMTY4aDM5Ljg5bC0xNi0xNkg0OGMtOC44MiwwLTE2LTcuMTgtMTYtMTZ2LTIzLjg5bC0xNi0xNlYxMzZDMTYsMTUzLjY3LDMwLjMzLDE2OCw0OCwxNjh6CgkJIi8+CjwvZz4KPC9zdmc+Cg=="
+            height="25"
+            width="25"
+            alt=""
+          />
+        </div>
+
+        <div class="search-icon">
+          <svg
+            focusable="false"
+            height="25"
+            width="25"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+          
+          <path
+          fill="#4285f4"
+          d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="setting-box">
+  <span>
+    <svg
+      focusable="false"
+      width="24"
+      height="24"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="#5f6368"
+    >
+      <path
+        d="M13.85 22.25h-3.7c-.74 0-1.36-.54-1.45-1.27l-.27-1.89c-.27-.14-.53-.29-.79-.46l-1.8.72c-.7.26-1.47-.03-1.81-.65L2.2 15.53c-.35-.66-.2-1.44.36-1.88l1.53-1.19c-.01-.15-.02-.3-.02-.46 0-.15.01-.31.02-.46l-1.52-1.19c-.59-.45-.74-1.26-.37-1.88l1.85-3.19c.34-.62 1.11-.9 1.79-.63l1.81.73c.26-.17.52-.32.78-.46l.27-1.91c.09-.7.71-1.25 1.44-1.25h3.7c.74 0 1.36.54 1.45 1.27l.27 1.89c.27.14.53.29.79.46l1.8-.72c.71-.26 1.48.03 1.82.65l1.84 3.18c.36.66.2 1.44-.36 1.88l-1.52 1.19c.01.15.02.3.02.46s-.01.31-.02.46l1.52 1.19c.56.45.72 1.23.37 1.86l-1.86 3.22c-.34.62-1.11.9-1.8.63l-1.8-.72c-.26.17-.52.32-.78.46l-.27 1.91c-.1.68-.72 1.22-1.46 1.22zm-3.23-2h2.76l.37-2.55.53-.22c.44-.18.88-.44 1.34-.78l.45-.34 2.38.96 1.38-2.4-2.03-1.58.07-.56c.03-.26.06-.51.06-.78s-.03-.53-.06-.78l-.07-.56 2.03-1.58-1.39-2.4-2.39.96-.45-.35c-.42-.32-.87-.58-1.33-.77l-.52-.22-.37-2.55h-2.76l-.37 2.55-.53.21c-.44.19-.88.44-1.34.79l-.45.33-2.38-.95-1.39 2.39 2.03 1.58-.07.56a7 7 0 0 0-.06.79c0 .26.02.53.06.78l.07.56-2.03 1.58 1.38 2.4 2.39-.96.45.35c.43.33.86.58 1.33.77l.53.22.38 2.55z"
+      ></path>
+      <circle cx="12" cy="12" r="3.5"></circle>
+    </svg>
+  </span>
+
+  <span>
+    <svg
+      class="gb_0e"
+      focusable="false"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="#5f6368"
+    >
+      <path
+        d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"
+      ></path>
+    </svg>
+  </span>
+
+  <span>
+    <img src="images\chi.png" alt="Chi" width="32" height="32" />
+  </span>
+</div>
+</nav>
+</header>
+
+<main>
+<!-- main tab section -->
+<section id="tab-section">
+<div class="container">
+  <div class="tab-container">
+    <div class="main-tabs">
+      <button>
+        <svg focusable="false" viewBox="0 0 24 24">
+          <path
+            fill="#34a853"
+            d="M10 2v2a6 6 0 0 1 6 6h2a8 8 0 0 0-8-8"
+          ></path>
+          <path
+            fill="#ea4335"
+            d="M10 4V2a8 8 0 0 0-8 8h2c0-3.3 2.7-6 6-6"
+          ></path>
+          <path
+            fill="#fbbc04"
+            d="M4 10H2a8 8 0 0 0 8 8v-2c-3.3 0-6-2.69-6-6"
+          ></path>
+          <path
+            fill="#4285f4"
+            d="M22 20.59l-5.69-5.69A7.96 7.96 0 0 0 18 10h-2a6 6 0 0 1-6 6v2c1.85 0 3.52-.64 4.88-1.68l5.69 5.69L22 20.59"
+          ></path>
+        </svg>
+        All
+      </button>
+
+      <button>
+        <svg focusable="false" viewBox="0 0 24 24">
+          <path
+            d="M12 11h6v2h-6v-2zm-6 6h12v-2H6v2zm0-4h4V7H6v6zm16-7.22v12.44c0 1.54-1.34 2.78-3 2.78H5c-1.64 0-3-1.25-3-2.78V5.78C2 4.26 3.36 3 5 3h14c1.64 0 3 1.25 3 2.78zM19.99 12V5.78c0-.42-.46-.78-1-.78H5c-.54 0-1 .36-1 .78v12.44c0 .42.46.78 1 .78h14c.54 0 1-.36 1-.78V12zM12 9h6V7h-6v2"
+          ></path>
+        </svg>
+        News
+      </button>
+
+      <button>
+        <svg focusable="false" viewBox="0 0 24 24">
+          <path
+            d="M14 13l4 5H6l4-4 1.79 1.78L14 13zm-6.01-2.99A2 2 0 0 0 8 6a2 2 0 0 0-.01 4.01zM22 5v14a3 3 0 0 1-3 2.99H5c-1.64 0-3-1.36-3-3V5c0-1.64 1.36-3 3-3h14c1.65 0 3 1.36 3 3zm-2.01 0a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h7v-.01h7a1 1 0 0 0 1-1V5"
+          ></path>
+        </svg>
+        Images
+      </button>
+
+      <button>
+        <svg focusable="false" viewBox="0 0 24 24">
+          <path
+            d="M10 16.5l6-4.5-6-4.5v9zM5 20h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1zm14.5 2H5a3 3 0 0 1-3-3V4.4A2.4 2.4 0 0 1 4.4 2h15.2A2.4 2.4 0 0 1 22 4.4v15.1a2.5 2.5 0 0 1-2.5 2.5"
+          ></path>
+        </svg>
+        Videos
+      </button>
+
+      <button>
+        <svg
+          focusable="false"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+          ></path>
+        </svg>
+        More
+      </button>
+    </div>
+
+    <button>Tools</button>
+  </div>
+</div>
+</section>
+
+<!-- name_intro section -->
+<section id="name_intro_section">
+<div class="container">
+  <p class="search_figures">About 651,000,000 results (0.67 seconds)</p>
+
+  <div class="name_tabs">
+    <div class="name">
+      <h1>Lionel Messi</h1>
+      <p>Footballer:</p>
+    </div>
+
+    <div class="tabs">
+      <button>Overview</button>
+      <button>News</button>
+      <button>Stats</button>
+      <button>Videos</button>
+    </div>
+  </div>
+
+  <div class="intro_images">
+    <div class="group_one">
+      <figure>
+        <img src="images\messi2.jpg" alt="messi" />
+      </figure>
+
+      <figure>
+        <img src="images\messi1.jpg" alt="messi" />
+      </figure>
+
+      <figure>
+        <img src="images\messi3.jpg" alt="messi" />
+      </figure>
+
+      <figure>
+        <img src="images\messi5.jpg" alt="messi" />
+      </figure>
+    </div>
+
+    <div class="group_two">
+      <figure><img src="images\messi4.jpg" alt="" /></figure>
+
+      <div class="texts">
+        <div class="one">
+          <img
+            id="dimg_7"
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA3ElEQVR4Ae2WIQzDIBBFEdPV6Ip6L2Y3Me9NMzuB98GbWrysqHf1otWYismm+vYFTRCEhXXjJrjkmSslLwHgi8vjxkoRKAL/J0BCSHAHGhjQgxHMwIKnY/Px+taNHd2/Bmg3p4wKuIH0Y1RQAB+ugDJxDgn0GQVMSMBmFJhDApSTYwLLQtR13xNAo0oWINS6ErXtpxInX0CmC3g1TURNkypQ+QL1IYG9hiFFRPIL8C8B/ybkO4bsFxH7Vcz+GLE/x5yBRL+LZDVQkTi2Ochn70dimQpFspKKi0AReAF/IVUTZ3/BGQAAAABJRU5ErkJggg=="
+            class="YQ4gaf zr758c"
+            height="12"
+            width="12"
+            alt=""
+            data-atf="1"
+            data-frt="0"
+          />
+          <span>Youtube ESPN FC</span>
+        </div>
+
+        <div class="two">
+          <h3>
+            Lionel Messi destroying his biggest critics ever II Part 2...
+          </h3>
+
+          <p>Welcome to the latest edition of ES...</p>
+
+          <span>17 hours ago</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="group_three">
+      <div class="top">
+        <div>
+          <p>Height</p>
+          <p>1.69M</p>
+        </div>
+
+        <div>
+          <p>Age</p>
+          <p>35 years old (24 June 1987)</p>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="texts">
+          <div>
+            <img
+              id="dimg_7"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA3ElEQVR4Ae2WIQzDIBBFEdPV6Ip6L2Y3Me9NMzuB98GbWrysqHf1otWYismm+vYFTRCEhXXjJrjkmSslLwHgi8vjxkoRKAL/J0BCSHAHGhjQgxHMwIKnY/Px+taNHd2/Bmg3p4wKuIH0Y1RQAB+ugDJxDgn0GQVMSMBmFJhDApSTYwLLQtR13xNAo0oWINS6ErXtpxInX0CmC3g1TURNkypQ+QL1IYG9hiFFRPIL8C8B/ybkO4bsFxH7Vcz+GLE/x5yBRL+LZDVQkTi2Ochn70dimQpFspKKi0AReAF/IVUTZ3/BGQAAAABJRU5ErkJggg=="
+              class="YQ4gaf zr758c"
+              height="12"
+              width="12"
+              alt=""
+              data-atf="1"
+              data-frt="0"
+            />
+            <span>Marca</span>
+          </div>
+
+          <p>Messi has the chance to complete a uniq...</p>
+
+          <span>8 hours ago</span>
+        </div>
+
+        <img src="images\group3.jpg" alt="messi" />
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="top_stories_about">
+<div class="container">
+  <div class="top_stories">
+    <h1>Top Stories</h1>
+    <h2>News about Lionel Messi</h2>
+
+    <div class="top_news">
+      <div class="left">
+        <div class="news_box">
+          <div class="texts">
+            <figure>
+              <img
+                src="images\mirror.png"
+                alt="mirror"
+                class="mirror"
+              />
+            </figure>
+
+            <a href="#"
+              >World cup semi-finals talking points: Lionel Messi's last
+              shot, France's defence</a
+            >
+
+            <span>8 hours ago</span>
+          </div>
+
+          <img src="images\group2.jpg" alt="messi" />
+        </div>
+
+        <div class="news_box">
+          <div class="texts">
+            <figure>
+              <img
+                src="images\mirror.png"
+                alt="mirror"
+                class="mirror"
+              />
+            </figure>
+
+            <a href="#"
+              >Messi not best in history- Ancelloti names three players better than Argenti...</a
+            >
+
+            <span>8 hours ago</span>
+          </div>
+
+          <img src="images\group2.jpg" alt="messi" />
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="news_box">
+          <div class="texts">
+            <figure>
+              <img
+                src="images\mirror.png"
+                alt="mirror"
+                class="mirror"
+              />
+            </figure>
+
+            <a href="#"
+              >Newcastle winger Allan Saint-Maximin tops list of most take-ons in 2022 ahea...</a
+            >
+
+            <span>8 hours ago</span>
+          </div>
+
+          <img src="images\group4.jpg" alt="messi" />
+        </div>
+
+        <div class="news_box">
+          <div class="texts">
+            <figure>
+              <img
+                src="images\mirror.png"
+                alt="mirror"
+                class="mirror"
+              />
+            </figure>
+
+            <a href="#"
+              >Erling Haaland has more league goals than 2012 Lionel Messi after 16 fixtures</a
+            >
+
+            <span>8 hours ago</span>
+          </div>
+
+          <img src="images\group1.jpg" alt="messi" />
+        </div>
+      </div>
+    </div>
+
+    <div class="see_more">
+      More news <i class="fas fa-arrow-right"></i>
+    </div>
+
+    <div class="people_ask">
+      <h2>People also ask</h2>
+
+      <div>
+        <span>Who is Number 1 Messi or Ronaldo</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+
+      <div>
+        <span>What is Messi's Networth?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+
+      <div>
+        <span>Who is the king of football all time?
+        </span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+
+    <div class="platform_stories">
+      <div class="stories">
+        <div class="source_address">
+          <span>
+            Lionel Messi - Wikipediahttps://en.wikipedia.org wiki
+          </span>
+
+          <i class="fas fa-ellipsis-vertical"></i>
+        </div>
+
+        <a href="#" class="main_link">Lionel Messi - Wikipedia</a>
+
+        <p>
+          50 minutes ago — Lionel Andrés Messi also known as Leo Messi,
+          is an Argentine professional footballer who plays as a forward
+          for Ligue 1 club Paris Saint-Germain and ...
+        </p>
+      </div>
+
+      <div class="stories">
+        <div class="source_address">
+          <span>
+            treblehttps://www.marca.com Home Soccer World Cup
+          </span>
+
+          <i class="fas fa-ellipsis-vertical"></i>
+        </div>
+
+        <a href="#" class="main_link"
+          >Messi has the chance to complete a unique World Cup treble</a
+        >
+
+        <p>
+          23 hours ago — Messi could win another World Cup Golden Ball.
+          FIFA's Technical Study Group, headed by Arsene Wenger, creates
+          a list of outstanding players at ...
+        </p>
+      </div>
+    </div>
+
+    <div class="news_videos">
+      <h2>Videos <i class="fas fa-greater-than"></i></h2>
+      <div class="video_news">
+        <img src="images\messi3.jpg" alt="" />
+
+        <div class="video_texts">
+          <a href="#" class="video_link"
+            >Messi has the chance to complete a unique World Cup
+            treble</a
+          >
+
+          <p>Sky Sports . <span>Sky Sports</span></p>
+
+          <span>2 days ago</span>
+        </div>
+      </div>
+
+      <div class="video_news">
+        <img src="images\messi3.jpg" alt="" />
+
+        <div class="video_texts">
+          <a href="#" class="video_link"
+            >Messi has the chance to complete a unique World Cup
+            treble</a
+          >
+
+          <p>Sky Sports . <span>Sky Sports</span></p>
+
+          <span>2 days ago</span>
+        </div>
+      </div>
+
+      <div class="video_news">
+        <img src="images\messi3.jpg" alt="" />
+
+        <div class="video_texts">
+          <a href="#" class="video_link"
+            >Messi has the chance to complete a unique World Cup
+            treble</a
+          >
+
+          <p>Sky Sports . <span>Sky Sports</span></p>
+
+          <span>2 days ago</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="see_more">
+      View all <i class="fas fa-arrow-right"></i>
+    </div>
+
+    <div class="platform_stories">
+      <div class="stories">
+        <div class="source_address">
+          <span>
+            Lionel Messi - Wikipediahttps://en.wikipedia.org wiki
+          </span>
+
+          <i class="fas fa-ellipsis-vertical"></i>
+        </div>
+
+        <a href="#" class="main_link">Lionel Messi - Wikipedia</a>
+
+        <p>
+          50 minutes ago — Lionel Andrés Messi also known as Leo Messi,
+          is an Argentine professional footballer who plays as a forward
+          for Ligue 1 club Paris Saint-Germain and ...
+        </p>
+      </div>
+
+      <div class="stories">
+        <div class="source_address">
+          <span>
+            treblehttps://www.marca.com Home Soccer World Cup
+          </span>
+
+          <i class="fas fa-ellipsis-vertical"></i>
+        </div>
+
+        <a href="#" class="main_link"
+          >Lionel Messi - Latest news, transfers, pictures, video, opini</a
+        >
+
+        <p>
+          23 hours ago — Widely regarded as the greatest player in history, the unassuming Argentina forward has become a Barcelona legend winning a succession of La Liga and ......
+        </p>
+      </div>
+
+      <div class="stories">
+        <div class="source_address">
+          <span>
+            treblehttps://www.marca.com Home Soccer World Cup
+          </span>
+
+          <i class="fas fa-ellipsis-vertical"></i>
+        </div>
+
+        <a href="#" class="main_link"
+          >Lionel Messi - Latest news, transfers, pictures, video, opini</a
+        >
+
+        <p>
+          23 hours ago — Widely regarded as the greatest player in history, the unassuming Argentina forward has become a Barcelona legend winning a succession of La Liga and ... ...
+        </p>
+      </div>
+
+      <div class="stories">
+        <div class="source_address">
+          <span>
+            treblehttps://www.marca.com Home Soccer World Cup
+          </span>
+
+          <i class="fas fa-ellipsis-vertical"></i>
+        </div>
+
+        <a href="#" class="main_link"
+          >Lionel Messi posts emotional New Year tribute to his family ...</a
+        >
+
+        <p>
+          23 hours ago —  For over 15 years, Lionel Messi started his World Cup journey in that Argentina game against Serbia where he even scored a goal...
+        </p>
+      </div>
+      <div class="stories">
+        <div class="source_address">
+          <span>
+            treblehttps://www.marca.com Home Soccer World Cup
+          </span>
+
+          <i class="fas fa-ellipsis-vertical"></i>
+        </div>
+
+        <a href="#" class="main_link"
+          >Lionel Messi - Latest news, transfers, pictures, video, opini</a
+        >
+
+        <p>
+          3 hours ago —Widely regarded as the greatest player in history, the unassuming Argentina forward has become a Barcelona legend winning a succession of La Liga and ... ...
+        </p>
+      </div>
+      <div class="stories">
+        <div class="source_address">
+          <span>
+            treblehttps://www.marca.com Home Soccer World Cup
+          </span>
+
+          <i class="fas fa-ellipsis-vertical"></i>
+        </div>
+
+        <a href="#" class="main_link"
+          >Messi has the chance to complete a unique World Cup treble</a
+        >
+
+        <p>
+          23 hours ago — Messi could win another World Cup Golden Ball.
+          FIFA's Technical Study Group, headed by Arsene Wenger, creates
+          a list of outstanding players at ...
+        </p>
+      </div>
+    </div>
+
+    <div class="related_searches">
+      <h2>
+        Related Searches <i class="fa-solid fa-ellipsis-vertical"></i>
+      </h2>
+
+      <div class="dropdown">
+        <span>Barcelona Strikers</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+
+      <div class="pictures">
+        <figure>
+          <img src="images\cr.jpg" alt="footballer" />
+          <figcaption>Cristiano Ronaldo</figcaption>
+        </figure>
+
+        <figure>
+          <img src="./images/neymar.jpg" alt="footballer" />
+          <figcaption>Neymar</figcaption>
+        </figure>
+        <figure>
+          <img src="./images/ronaldinho.jpg" alt="footballer" />
+          <figcaption>Ronaldinho</figcaption>
+        </figure>
+        <figure>
+          <img src="./images/haaland.jpg" alt="footballer" />
+          <figcaption>Haaland</figcaption>
+        </figure>
+        <figure>
+          <img src="./images/dembele.jpg" alt="footballer" />
+          <figcaption>Dembele</figcaption>
+        </figure>
+        <figure>
+          <img src="images\luis.jpg" alt="footballer" />
+          <figcaption>Luis Suarez</figcaption>
+        </figure>
+      </div>
+
+      <div class="see_more">
+        See more <i class="fas fa-arrow-right"></i>
+      </div>
+
+      <div class="dropdown">
+        <span>Argentina soccer players</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+
+    <div class="search_suggestions">
+      <div class="suggestion">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        messi vs ronaldo
+      </div>
+
+      <div class="suggestion">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        messi psg
+      </div>
+
+      <div class="suggestion">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        messi networth
+      </div>
+
+      <div class="suggestion">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        messi vs ronaldo
+      </div>
+
+      <div class="suggestion">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        messi news
+      </div>
+
+      <div class="suggestion">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        messi wife
+      </div>
+    </div>
+  </div>
+
+  <div class="about">
+    <h2>About</h2>
+
+    <div class="bio">
+      <p>
+        Lionel Andrés Messi, also known as Leo Messi, is an Argentine
+        professional footballer who plays as a forward for Ligue 1 club
+        Paris Saint-Germain and captains the Argentina national team.
+        <a href="">Wikipedia</a>
+      </p>
+
+      <div class="more_info">
+        <span>Born:</span> 24 June 1987 (age 35 years),
+        <a href="">Rosario, Argentina</a>
+      </div>
+
+      <div class="more_info">
+        <span>Current teams:</span>
+        <a href="">Argentina national football team</a> (#10 / Forward),
+        <a href=""> Paris Saint-Germain F.C.</a> (#30 / Forward)
+      </div>
+
+      <div class="more_info"><span>Height:</span> 1.69m</div>
+
+      <div class="more_info">
+        <span>Spouse:</span> <a href="">Antonela Roccuzzo</a> (m.2017)
+      </div>
+
+      <div class="more_info">
+        <span>Salary:</span> 41 million USD (2022)
+      </div>
+
+      <div class="more_info"><span>Shoe size:</span> 10</div>
+
+      <div class="more_info">
+        <span>Children:</span>
+        <a href="">Mateo Messi Roccuzzo,</a>
+        <a href="">Thiago Messi Roccuzzo,</a>
+        <a href="">Ciro Messi Roccuzzo</a>
+      </div>
+    </div>
+
+    <div class="stats">
+      <header>
+        <h2>Stats</h2>
+        <span><i class="fas fa-greater-than"></i></span>
+      </header>
+
+      <div class="table_container">
+        <h2>Argentina</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>League</th>
+              <th>Matches</th>
+              <th>Goals</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>
+                World Cup
+                <p>2022</p>
+              </td>
+              <td>6</td>
+              <td>5</td>
+            </tr>
+
+            <tr>
+              <td>
+                World Cup
+                <p>Qualifiers</p>
+              </td>
+              <td>15</td>
+              <td>7</td>
+            </tr>
+
+            <tr>
+              <td>
+                Copa America
+                <p>2021</p>
+              </td>
+              <td>7</td>
+              <td>4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="profiles">
+      <h2>Profiles</h2>
+
+      <div class="socials">
+        <figure>
+          <img src="images\instagram.jpg" alt="instagram" />
+          <figcaption>Instagram</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images\youtube.png" alt="youtube" />
+          <figcaption>Youtube</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images\facebook.png" alt="facebook" />
+          <figcaption>Facebook</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="people_searches">
+      <h2>People also search for</h2>
+
+      <div class="searches">
+        <figure>
+          <img src="images\cr.jpg" alt="footballer" />
+          <figcaption>Cristiano Ronaldo</figcaption>
+        </figure>
+
+        <figure>
+          <img src="./images/neymar.jpg" alt="footballer" />
+          <figcaption>Neymar</figcaption>
+        </figure>
+        <figure>
+          <img src="images\luis.jpg" alt="footballer" />
+          <figcaption>luis suarez</figcaption>
+        </figure>
+        <figure>
+          <img src="./images/haaland.jpg" alt="footballer" />
+          <figcaption>Haaland</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer></footer>
+</body>
+</html>
+
+            
+
+
+
+   
+    
+</body>
+</html> 
